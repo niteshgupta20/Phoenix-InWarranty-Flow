@@ -32,7 +32,8 @@ jobs:
              newman run 'Inwarranty-Flow Collection.postman_collection.json' \
              -e QA.postman_environment.json \
              -d testdata.csv \
-             -r cli,htmlextra
+             -r cli,htmlextra \
+             --reporter-htmlextra-export ./newman/index.html
 
       - name: Newman report
         if: always() # ensure that the archive section executed irrespective wheather the previous step has failed or passed!
